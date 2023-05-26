@@ -8,7 +8,7 @@ public class DBConnect {
     public static Connection ConnecrDb() {
         try {
             Class.forName("org.sqlite.JDBC");
-            Connection conn = DriverManager.getConnection("jdbc:sqlite:G:\\Project\\BankManagementSystem(BMS)\\BankingManagementSystem\\bank.db");
+            Connection conn = DriverManager.getConnection("jdbc:sqlite:G:\\Project\\BankManagementSystem(BMS)\\BankingManagementSystem\\Bangking-Management-System\\bank.db");
             return conn;
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);

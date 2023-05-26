@@ -60,7 +60,7 @@ public class Loading extends javax.swing.JFrame implements Runnable {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("G:\\Project\\BankManagementSystem(BMS)\\BankingManagementSystem\\src\\images\\Logo.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("G:\\Project\\BankManagementSystem(BMS)\\BankingManagementSystem\\Bangking-Management-System\\src\\images\\Logo.png")); // NOI18N
 
         jProgressBar1.setBackground(new java.awt.Color(240, 240, 240));
         jProgressBar1.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
@@ -69,7 +69,7 @@ public class Loading extends javax.swing.JFrame implements Runnable {
 
         jLabel2.setText("Redirecting...");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("G:\\Project\\BankManagementSystem(BMS)\\BankingManagementSystem\\src\\images\\loading.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("G:\\Project\\BankManagementSystem(BMS)\\BankingManagementSystem\\Bangking-Management-System\\src\\images\\loading.png")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

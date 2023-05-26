@@ -326,7 +326,7 @@ public class MyPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("G:\\Project\\BankManagementSystem(BMS)\\BankingManagementSystem\\src\\images\\Logo.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("G:\\Project\\BankManagementSystem(BMS)\\BankingManagementSystem\\Bangking-Management-System\\src\\images\\Logo.png")); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Account No");
@@ -1073,7 +1073,7 @@ public class MyPage extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Change Pin", jPanel8);
 
-        jLabel43.setIcon(new javax.swing.ImageIcon("C:\\Users\\Rkemo\\Downloads\\IMG_20221226_213543_cropedOne.jpg")); // NOI18N
+        jLabel43.setIcon(new javax.swing.ImageIcon("G:\\Project\\BankManagementSystem(BMS)\\BankingManagementSystem\\Bangking-Management-System\\src\\images\\emn.jpg")); // NOI18N
 
         jLabel42.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel42.setText("EMN Banking V1.0");

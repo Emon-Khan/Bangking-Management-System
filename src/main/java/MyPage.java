@@ -122,7 +122,6 @@ public class MyPage extends javax.swing.JFrame {
             }
         }
     }*/
-
     public void Table2() {
         String sql = "select Balances.Account, Account.Name, Balances.MICR_No, Balances.Balance from Balances INNER JOIN Account ON Account.Acc = Balances.Account where Balances.Account = ?";
         try {
@@ -150,6 +149,7 @@ public class MyPage extends javax.swing.JFrame {
         int day = cal.get(Calendar.DAY_OF_MONTH);
         jTextField2.setText(+day + "-" + (month + 1) + "-" + year);
     }
+
     public void Withdrawl() {
         String sql = "select Balances.Account, Account.Name, Balances.Balance from Balances INNER JOIN Account ON Account.Acc = Balances.Account where Balances.Account=?";
         try {
@@ -179,7 +179,8 @@ public class MyPage extends javax.swing.JFrame {
             }
         }
     }
-    public void Statement(String From, String To, String Action, String Amount){
+
+    public void Statement(String From, String To, String Action, String Amount) {
         String sql = "insert into Statement(From, To, Action, Amount )values(?, ?, ?, ?)";
         try {
             pst = conn.prepareStatement(sql);
@@ -204,6 +205,7 @@ public class MyPage extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e);
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -326,8 +328,6 @@ public class MyPage extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("G:\\Project\\BankManagementSystem(BMS)\\BankingManagementSystem\\Bangking-Management-System\\src\\images\\Logo.png")); // NOI18N
-
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Account No");
 
@@ -447,7 +447,7 @@ public class MyPage extends javax.swing.JFrame {
                             .addComponent(jTextField4)
                             .addComponent(jTextField5)
                             .addComponent(jTextField6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING)
@@ -1073,8 +1073,6 @@ public class MyPage extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Change Pin", jPanel8);
 
-        jLabel43.setIcon(new javax.swing.ImageIcon("G:\\Project\\BankManagementSystem(BMS)\\BankingManagementSystem\\Bangking-Management-System\\src\\images\\emn.jpg")); // NOI18N
-
         jLabel42.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel42.setText("EMN Banking V1.0");
 
@@ -1117,7 +1115,7 @@ public class MyPage extends javax.swing.JFrame {
                             .addComponent(jLabel45)
                             .addComponent(jLabel44)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1139,7 +1137,7 @@ public class MyPage extends javax.swing.JFrame {
                             .addComponent(jLabel48, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel46, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addComponent(jLabel49, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap(894, Short.MAX_VALUE))
+                .addContainerGap(926, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("About", jPanel9);
@@ -1153,7 +1151,7 @@ public class MyPage extends javax.swing.JFrame {
                     .addComponent(jTabbedPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel3))
@@ -1261,12 +1259,24 @@ public class MyPage extends javax.swing.JFrame {
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
         try {
-            String a1 = jTextField29.getText();
-            String a2 = jTextField32.getText();
-            String sql = "update Balances set Balance = '" + a2 + "'where Account='" + a1 + "'";
+            String a = jTextField29.getText();
+            String available_balance = jTextField30.getText();
+            String ammount = jTextField31.getText();
+            String total;
+            if (jButton12.getModel().isPressed()) {
+                total = jTextField32.getText();
+            } else {
+                total = calculationSubtraction(available_balance, ammount);
+            }
+            String sql = "update Balances set Balance = '" + total + "'where Account='" + a + "'";
             pst = conn.prepareStatement(sql);
             pst.execute();
             JOptionPane.showMessageDialog(null, "Withdraw Successfully");
+            jTextField16.setText(total);
+            jTextField22.setText(total);
+            jTextField30.setText(total);
+            jTextField31.setText("");
+            jTextField32.setText("");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
@@ -1277,9 +1287,10 @@ public class MyPage extends javax.swing.JFrame {
         try {
             String a1 = jTextField30.getText();
             String a2 = jTextField31.getText();
-            int subtraction = Integer.parseInt(a1) - Integer.parseInt(a2);
+            jTextField32.setText(calculationSubtraction(a1, a2));
+            /*int subtraction = Integer.parseInt(a1) - Integer.parseInt(a2);
             String subtraction1 = String.valueOf(subtraction);
-            jTextField32.setText(subtraction1);
+            jTextField32.setText(subtraction1);*/
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, e);
         }
@@ -1349,9 +1360,10 @@ public class MyPage extends javax.swing.JFrame {
             String sqlBalances = "update Balances set Balance='" + value2 + "' where Account ='" + value1 + "'";
             pst = conn.prepareStatement(sqlBalances);
             pst.execute();
-            jTextField22.setText(value2);
             JOptionPane.showMessageDialog(null, "Successfully Deposited");
-            Statement("", value1, "Deposite", value2);
+            //Statement("", value1, "Deposite", value2);
+            jTextField22.setText(value2);
+            jTextField30.setText(value2);
             jTextField16.setText(value2);
             jTextField17.setText("");
             jTextField18.setText("");
@@ -1406,6 +1418,7 @@ public class MyPage extends javax.swing.JFrame {
         sum1 = String.valueOf(sum);
         return sum1;
     }
+
     public String calculationSubtraction(String a1, String a2) {
         int subtraction = Integer.parseInt(a1) - Integer.parseInt(a2);
         subtraction1 = String.valueOf(subtraction);
@@ -1458,7 +1471,9 @@ public class MyPage extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
-    }    public void TransferC() {
+    }
+
+    public void TransferC() {
         try {
             String a1 = jTextField23.getText();
             String a2 = jTextField25.getText();
@@ -1491,10 +1506,11 @@ public class MyPage extends javax.swing.JFrame {
                 value2 = calculationSubtraction(a1, a2);
             }
             String sql = "update Balances set Balance='" + value2 + "'where Account='" + value1 + "'";
-            jTextField16.setText(value2);
             pst = conn.prepareStatement(sql);
             pst.execute();
+            jTextField16.setText(value2);
             jTextField22.setText(value2);
+            jTextField30.setText(value2);
             jTextField23.setText("");
             jTextField24.setText("");
             jTextField26.setText("");

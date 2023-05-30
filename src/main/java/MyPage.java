@@ -28,6 +28,7 @@ public class MyPage extends javax.swing.JFrame {
         //Table1();
         Table2();
         Withdrawl();
+        ChangePin();
     }
 
     public void Profile() {
@@ -206,6 +207,10 @@ public class MyPage extends javax.swing.JFrame {
         }
     }
 
+    public void ChangePin() {
+        jTextField43.setText(AccountTemp);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -293,6 +298,8 @@ public class MyPage extends javax.swing.JFrame {
         jButton16 = new javax.swing.JButton();
         jLabel41 = new javax.swing.JLabel();
         jTextField43 = new javax.swing.JTextField();
+        jLabel50 = new javax.swing.JLabel();
+        jTextField44 = new javax.swing.JTextField();
         jPanel9 = new javax.swing.JPanel();
         jLabel43 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
@@ -316,7 +323,7 @@ public class MyPage extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(798, 670));
 
         jTabbedPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jTabbedPane1.setPreferredSize(new java.awt.Dimension(791, 450));
+        jTabbedPane1.setPreferredSize(new java.awt.Dimension(791, 400));
 
         jPanel1.setPreferredSize(new java.awt.Dimension(723, 354));
 
@@ -855,9 +862,9 @@ public class MyPage extends javax.swing.JFrame {
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addContainerGap()
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("View Balance", jPanel7);
@@ -893,6 +900,11 @@ public class MyPage extends javax.swing.JFrame {
 
         jTextField43.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
 
+        jLabel50.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel50.setText("Confirm Your New Pin");
+
+        jTextField44.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
@@ -902,17 +914,19 @@ public class MyPage extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel39)
                     .addComponent(jLabel40)
-                    .addComponent(jLabel41))
+                    .addComponent(jLabel41)
+                    .addComponent(jLabel50))
                 .addGap(44, 44, 44)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jTextField44)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel8Layout.createSequentialGroup()
                         .addComponent(jButton15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                         .addComponent(jButton16))
-                    .addComponent(jTextField41)
-                    .addComponent(jTextField42)
-                    .addComponent(jTextField43))
-                .addContainerGap(222, Short.MAX_VALUE))
+                    .addComponent(jTextField41, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField42, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField43, javax.swing.GroupLayout.Alignment.LEADING))
+                .addContainerGap(174, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -929,11 +943,15 @@ public class MyPage extends javax.swing.JFrame {
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel40)
                     .addComponent(jTextField42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
+                .addGap(36, 36, 36)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jTextField44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel50))
+                .addGap(40, 40, 40)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton15)
                     .addComponent(jButton16))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Change Pin", jPanel8);
@@ -946,12 +964,12 @@ public class MyPage extends javax.swing.JFrame {
         jLabel44.setText("Emon Khan");
 
         jLabel45.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel45.setText("Full-time Athlete, part-time coder, problem solver");
+        jLabel45.setText(" Java Project Developer | Competitive Programmer | Web Development");
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("A passionate problem-solver and full-stack software engineer with more than Three month\nof experience in improving software performance, updating existing software, testing, \nand developing new software functionalities. Versatile and quick learner, willing to \nembrace new challenges and eager to learn more.");
+        jTextArea1.setText("Java developer experienced in Java Swing, data structures, algorithms,\n MySQL, and web development. Seeking new challenges in Java software engineering. \nLinkedin: https://linkedin.com/in/emon-khan/\nEmail: rkemon94@gmail.com");
         jTextArea1.setBorder(null);
         jScrollPane3.setViewportView(jTextArea1);
 
@@ -961,9 +979,6 @@ public class MyPage extends javax.swing.JFrame {
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(260, 260, 260)
-                        .addComponent(jLabel42))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGap(91, 91, 91)
                         .addComponent(jLabel43)
@@ -977,9 +992,12 @@ public class MyPage extends javax.swing.JFrame {
                                 .addComponent(jLabel48)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel49))
-                            .addComponent(jLabel45)
                             .addComponent(jLabel44)
-                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel45)))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(251, 251, 251)
+                        .addComponent(jLabel42)))
                 .addContainerGap(178, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
@@ -988,21 +1006,20 @@ public class MyPage extends javax.swing.JFrame {
                 .addGap(25, 25, 25)
                 .addComponent(jLabel42)
                 .addGap(54, 54, 54)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel43)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jLabel44)
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel45)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, Short.MAX_VALUE)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel47, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel48, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel46, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addComponent(jLabel44))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel45)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel47, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel48, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel46, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel49, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(128, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("About", jPanel9);
@@ -1101,9 +1118,9 @@ public class MyPage extends javax.swing.JFrame {
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
-        jTextField43.setText("");
         jTextField41.setText("");
         jTextField42.setText("");
+        jTextField44.setText("");
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
@@ -1112,17 +1129,25 @@ public class MyPage extends javax.swing.JFrame {
             String value1 = jTextField41.getText();
             String value2 = jTextField42.getText();
             String value3 = jTextField43.getText();
+            String value4 = jTextField44.getText();
             String sql = "select * from Account where pin=? and Acc=?";
             pst = conn.prepareStatement(sql);
             pst.setString(1, value1);
             pst.setString(2, value3);
             rs = pst.executeQuery();
             if (rs.next()) {
-                String Update_Query = "update Account set pin='" + value2 + "'where Acc='" + value3 + "'";
-                conn.prepareStatement(Update_Query).execute();
-                JOptionPane.showMessageDialog(null, "New pin updated successfully");
-                rs.close();
-                pst.close();
+                if (!value2.equals("") && value2.equals(value4)) {
+                    String Update_Query = "update Account set pin='" + value2 + "'where Acc='" + value3 + "'";
+                    conn.prepareStatement(Update_Query).execute();
+                    JOptionPane.showMessageDialog(null, "New pin updated successfully");
+                    jTextField41.setText("");
+                    jTextField42.setText("");
+                    jTextField44.setText("");
+                    rs.close();
+                    pst.close();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Your confirmation of new pin doesn't match");
+                }
             } else {
                 JOptionPane.showMessageDialog(null, "You have entered an incorrect old pin");
             }
@@ -1488,6 +1513,7 @@ public class MyPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -1532,6 +1558,7 @@ public class MyPage extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField41;
     private javax.swing.JTextField jTextField42;
     private javax.swing.JTextField jTextField43;
+    private javax.swing.JTextField jTextField44;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;

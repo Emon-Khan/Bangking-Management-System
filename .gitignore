@@ -1,0 +1,23 @@
+# IntelliJ IDEA files
+.idea/
+
+# Compiled class files
+*.class
+
+# Build output
+out/
+
+# User-specific files
+*.iml
+*.iws
+*.ipr
+
+# SQLite database file
+*.sqlite
+
+# Package files
+*.jar
+
+# OS-specific files
+.DS_Store
+Thumbs.db
